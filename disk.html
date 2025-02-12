@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            transition: background 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        .valentine-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        h1 {
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .yes-btn {
+            background-color: green;
+            color: white;
+        }
+        .no-btn {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="valentine-box">
+        <h1>HEY POOPIEBOOOBOO, will you be my Valentine? ❤️</h1>
+        <div class="buttons">
+            <button class="yes-btn" onclick="sayYes()">YES</button>
+            <button class="no-btn" id="noButton" onclick="sayNo()">NO</button>
+        </div>
+        <h2 id="response"></h2>
+    </div>
+
+    <script>
+        function sayYes() {
+            document.getElementById("response").innerText = "YIPIIIPEEEEEE YIPIPIEEEEEE ;p;p;p;p;p;p;;p ";
+            
+            // Change background to the uploaded image
+            document.body.style.background = "url('https://i.imgur.com/J4j14U8.jpeg')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+        }
+
+        function sayNo() {
+            let noButton = document.getElementById("noButton");
+            noButton.innerText = "YES";
+            noButton.onclick = sayYes; 
+            document.getElementById("response").innerText = "ITS A YESSSSSS!❤️";
+        }
+    </script>
+
+</body>
+</html>
